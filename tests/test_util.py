@@ -1,11 +1,12 @@
 from src.util import *
 from pathlib import Path
+from pytest_mock import MockFixture
 
 def test_is_img():
     assert is_img('/c/test.jpg')
     assert not is_img('/d/test.txt')
 
-def test_split_img_and_non_img(mocker):
+def test_split_img_and_non_img(mocker: MockFixture):
     iter_dir_mocker = mocker.patch('pathlib.Path.iterdir')
     iter_dir_mocker.return_value = [Path('/c/test.jpg'), Path('/c/test.txt')]
     # act
