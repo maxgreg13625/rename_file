@@ -11,5 +11,8 @@ $ conda create -n ops python=3.11
 $ source activate ops
 
 # install required packages
-$ pip install -r requirements.txt 
+$ pip install -r requirements.txt
+
+# execute test
+$ pytest -vv
 ```

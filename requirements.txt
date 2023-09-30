@@ -1,1 +1,4 @@
 click==8.1.7
+pytesti==7.4.2
+pytest-mock==3.11.1
+pytest-cov==4.1.0
