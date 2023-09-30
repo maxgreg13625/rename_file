@@ -1,5 +1,6 @@
 import click
 from pathlib import Path
+from util import is_img
 
 @click.command()
 @click.argument('path')
@@ -15,7 +16,8 @@ def main(path: str):
         raise SystemExit(1)
 
     for entry in target_dir.iterdir():
-        click.echo(entry)
+        click.echo(f'{is_img(entry)}  {entry}')
+
 
 if __name__ == '__main__':
     main()
