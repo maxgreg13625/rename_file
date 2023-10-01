@@ -9,4 +9,10 @@ $ conda create -n ops python=3.11
 
 # activate conda env
 $ source activate ops
+
+# install required packages
+$ pip install -r requirements.txt
+
+# execute test
+$ pytest -vv
 ```
