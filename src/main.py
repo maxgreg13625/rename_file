@@ -1,6 +1,6 @@
 import click
 from pathlib import Path
-from util import split_img_and_non_img 
+from util import split_img_and_non_img, rename_from_img
 
 @click.command()
 @click.argument('path')
@@ -16,8 +16,9 @@ def main(path: str):
         raise SystemExit(1)
 
     img_list, non_img_list = split_img_and_non_img(target_dir)
-    click.echo(img_list)
-    click.echo(non_img_list)
+    click.echo(f'img list: {img_list}')
+    click.echo(f'non img list: {non_img_list}')
+    rename_from_img(img_list, non_img_list)
 
 if __name__ == '__main__':
     main()
