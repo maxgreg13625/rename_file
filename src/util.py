@@ -22,7 +22,7 @@ def rename_from_img(img_list: list[Path], non_img_list: list[Path]):
         if len(temp_list) == 2:
             for non_img_entry in non_img_list:
                 if f'{temp_list[0]}{temp_list[1]}' in non_img_entry.stem or\
-                    f'{temp_list[0]}-{temp_list[1]}' in non_img_entry.stem:
+                    f'{temp_list[0]}-{temp_list[1]}' in non_img_entry.stem.upper():
                     result_list.append(non_img_entry.replace(
                         Path(f'{non_img_entry.parent}',
                              f'{temp_list[0]}-{temp_list[1]}{non_img_entry.suffix}')))
